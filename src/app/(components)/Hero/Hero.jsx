@@ -3,6 +3,9 @@
 'use client'
 import { useState, useEffect } from "react"
 import { Pencil, Trash2 } from "lucide-react"
+import { Linkedin, Youtube } from "lucide-react"
+import Link from "next/link"
+
 
 export default function Home() {
   const [todos, setTodos] = useState([])
@@ -116,7 +119,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 p-6">
+    <div className="min-h-screen flex items-center flex-col justify-center bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 p-6">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
         <h1 className="text-3xl font-bold mb-8 text-center text-gray-800">To-Do List</h1>
 
@@ -178,7 +181,28 @@ export default function Home() {
             </li>
           ))}
         </ul>
+
       </div>
+        <div className="flex  flex-row gap-4 items-center justify-center  p-4">
+      <Link
+        href="https://www.linkedin.com/company/fistasolutions"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center px-6 py-3 text-lg font-medium text-white bg-[#0077B5] rounded-lg shadow-md hover:bg-[#006699] transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0077B5]"
+      >
+        <Linkedin className="w-6 h-6 mr-2" />
+        LinkedIn
+      </Link>
+      <Link
+        href="https://www.youtube.com/@FistaSolutions"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center px-6 py-3 text-lg font-medium text-white bg-[#FF0000] rounded-lg shadow-md hover:bg-[#CC0000] transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF0000]"
+      >
+        <Youtube className="w-6 h-6 mr-2" />
+        YouTube
+      </Link>
+    </div>
     </div>
   )
 }
